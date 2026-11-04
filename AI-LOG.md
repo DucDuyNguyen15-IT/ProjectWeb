@@ -31,3 +31,22 @@ Mỗi mục là một trang hoặc một nhiệm vụ đã giao cho assistant. P
   thanh toán disabled (thứ quan trọng nhất bị mờ, dễ trượt tương phản).
 - Đã kiểm tra: đối chiếu từng màn với docs/pa1/ và LINK.md; mỗi khác biệt có lý do trong
   bảng Changed since PA#1; bảng rủi ro rubric ở cuối LAYOUT.md.
+
+## 3. Design System: token màu, chữ, spacing — 04/11/2026
+- Người làm: Nguyễn Đức Duy
+- Tool: Claude Code (Claude Opus 5.5), skill ui-ux-pro-max, MCP claude-artifacts (Design System)
+- Request: Prompt 3 trong brief.md: lấy màu từ ảnh PA#1, kiểm tra tương phản từng cặp
+  chữ/nền, sửa cặp không đạt, chốt thang chữ/bo góc/nút, tạo artifact Design System,
+  viết @theme và docs/design/TOKENS.md.
+- Kết quả: commit 1e1805a; 27 cặp chữ/nền đều ≥ 4.5:1; artifact
+  https://claude.ai/artifact/PJtrtw715d1WC7UWRGEkCL.
+- Changed: 7 sắc chữ phụ của PA#1 không đạt (2.27–3.95:1) → gộp thành token muted;
+  brand #8e6126 → #8a5e25 (4.39:1 trên nhãn Chờ cọc); chữ vàng trên nền sáng (2.30:1)
+  → dùng brand; eyebrow hero → gold-light với lớp phủ cố định 80%.
+- Sai và đã sửa: assistant chọn muted #70685e lần đầu; chạy lại script tương phản trên
+  cả nền phụ thì chỉ đạt 4.46:1 trên brand-soft và 4.44:1 trên danger-soft → đổi
+  #6f675d. Viền ô nhập #9a8d7c chỉ 2.92:1 trên sand-soft (cần 3:1) → #928472.
+- Rejected: bảng màu "Photography Studio" của ui-ux-pro-max (đen/trắng thuần) vì khác
+  hẳn PA#1; chỉ dùng quy tắc kiểm tra của skill.
+- Đã kiểm tra: script tính tỉ lệ WCAG cho từng cặp (bảng trong TOKENS.md); npm run build
+  chạy được; sẽ kiểm tra lại bằng DevTools colour picker khi có trang.

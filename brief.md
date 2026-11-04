@@ -72,3 +72,34 @@ Việc lần này:
    (token chính thức làm ở bước 3), build ra css/tailwind.css.
 Chưa viết HTML và chưa push trong lần này. Báo lại cho mình danh sách commit sau khi xong.
 ```
+
+## Prompt 2 — Nguyễn Đức Duy · Claude Code (Claude Opus 5.5) · 04/11/2026
+
+Lên ý tưởng bố cục 3 màn ở 360/768/1280.
+
+```
+Bước 2: lên ý tưởng bố cục. Đọc CLAUDE.md, docs/pa1/ (5 ảnh) và LINK.md của repo
+DucDuyNguyen15-IT/gradstudio. Chưa viết code, chưa tạo mockup trong bước này.
+
+Mục tiêu: cùng mình chốt mỗi màn trông thế nào ở 360, 768 và 1280px, giữ đúng nội dung và
+phong cách PA#1 (nền kem, nâu vàng, tiêu đề serif, câu chuyện của Linh ngày 24/10/2026).
+
+Cách làm:
+- Đi lần lượt Màn 1 → Màn 2 → Màn 3. Mỗi lần hỏi mình MỘT câu, kèm 2–3 phương án có sơ đồ
+  ASCII ngắn và phương án bạn đề xuất. Chờ mình chọn rồi mới hỏi câu tiếp.
+- Với mỗi màn, cần chốt được:
+  · thứ tự các khối ở 360px (một cột), cách chia cột ở 768px và 1280px;
+  · thứ quan trọng nhất của màn (nút hoặc khối nổi bật nhất);
+  · phần nào của PA#1 không làm được khi tắt JavaScript (chat nổi, slideshow, nút "Màn 1/2/3",
+    "Đặt lại demo", các bước bấm mô phỏng ở Màn 2, hộp thanh toán ở Màn 3) và thay bằng gì;
+  · link hoặc form nào đưa sang trang tiếp theo trên luồng chính;
+  · mục dài dùng để thử bố cục (tên khách dài, tên gói dài) đặt ở đâu;
+  · phần nào là "Not wired yet".
+- Báo ngay nếu một phương án có nguy cơ vi phạm rubric (cuộn ngang ở 360px, nút dưới 44px,
+  bảng không co được, khác PA#1 mà không có lý do).
+
+Kết quả: sau khi chốt cả 3 màn, viết docs/design/LAYOUT.md, gồm cho mỗi màn: bảng khối theo
+3 độ rộng, thứ quan trọng nhất, link luồng chính, danh sách "Changed since PA#1" kèm lý do,
+danh sách "Not wired yet". Cho mình xem trước khi commit. Commit
+"design: layout decisions for 3 screens at 360/768/1280".
+```

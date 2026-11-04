@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+/* Token TẠM — token chính thức sẽ được thay ở bước 3 (Design System + ui-ux-pro-max). */
+@theme {
+  --font-serif: Georgia, "Times New Roman", "Noto Serif", serif;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
+
+  --color-cream: #faf7f2;
+  --color-ink: #2b2118;
+  --color-brand: #8a5a1f;
+}

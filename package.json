@@ -1,0 +1,12 @@
+{
+  "name": "gradstudio-pa2",
+  "private": true,
+  "description": "GradStudio — PA#2 responsive prototype (static HTML + Tailwind CSS v4)",
+  "scripts": {
+    "build": "tailwindcss -i src/input.css -o css/tailwind.css --minify",
+    "watch": "tailwindcss -i src/input.css -o css/tailwind.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.4"
+  }
+}

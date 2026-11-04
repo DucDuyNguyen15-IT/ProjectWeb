@@ -103,3 +103,34 @@ Kết quả: sau khi chốt cả 3 màn, viết docs/design/LAYOUT.md, gồm cho
 danh sách "Not wired yet". Cho mình xem trước khi commit. Commit
 "design: layout decisions for 3 screens at 360/768/1280".
 ```
+
+## Prompt 3 — Nguyễn Đức Duy · Claude Code (Claude Opus 5.5) · 04/11/2026
+
+Design System: token màu, chữ, spacing, bo góc và kiểm tra tương phản.
+
+```
+Bước 3: Design System. Đọc CLAUDE.md, docs/design/LAYOUT.md và 5 ảnh trong docs/pa1/.
+Chưa viết HTML trong bước này.
+
+Mục tiêu: một bộ token duy nhất cho cả 3 trang, giữ tông PA#1 (nền kem, nâu vàng cho nút
+chính, chữ nâu đậm, tiêu đề serif), đạt tương phản theo rubric.
+
+Việc cần làm:
+1. Lấy màu từ ảnh PA#1: nền trang, nền thẻ, chữ chính, chữ phụ, nâu vàng của nút chính,
+   viền, màu trạng thái (Chờ cọc, Đã chốt, Trùng lịch, Chưa trả lời), lớp phủ tối trên ảnh
+   hero. Liệt kê mã màu đọc được.
+2. Dùng skill ui-ux-pro-max để kiểm tra từng cặp chữ/nền sẽ dùng thật: chữ thân trên nền
+   trang và nền thẻ, chữ phụ (xám/nâu nhạt), chữ trắng trên nút nâu, chữ trắng trên ảnh hero
+   có lớp phủ, chữ trên nhãn trạng thái. Mọi cặp chữ thân và nút phải ≥ 4.5:1. Cặp nào
+   không đạt thì đề xuất mã màu gần nhất đạt, giữ cùng tông. Lập bảng: cặp màu – tỉ lệ cũ –
+   mã mới – tỉ lệ mới – lý do. Mỗi màu bị đổi so với PA#1 phải ghi vào danh sách Changed.
+3. Chốt thang chữ (text-base 16px trở lên cho chữ thân; cỡ h1/h2/h3 ở 360 và 1280), font
+   stack serif/sans trong CLAUDE.md, bo góc, đổ bóng, kiểu nút (chính, phụ viền, link) với
+   min-h-11.
+4. Tạo artifact Design System qua MCP (loại "Design System") gồm màu, chữ, spacing scale
+   1/2/3/4/6/8/12/16, bo góc, các nút và nhãn trạng thái có xem trước, để cả nhóm xem.
+5. Viết token vào @theme trong src/input.css (thay token tạm), chạy npm run build.
+   Viết docs/design/TOKENS.md: bảng token, bảng tương phản ở bước 2, link artifact.
+Cho mình xem bảng tương phản và các màu bị đổi trước khi commit. Commit
+"design: tokens (colors, type, spacing, radius) with contrast checks".
+```

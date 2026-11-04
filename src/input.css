@@ -1,11 +1,64 @@
 @import "tailwindcss";
 
-/* Token TẠM — token chính thức sẽ được thay ở bước 3 (Design System + ui-ux-pro-max). */
+/*
+  GradStudio — design tokens (bước 3). Nguồn màu: ảnh PA#1 trong docs/pa1/.
+  Bảng tương phản và lý do từng màu đổi: docs/design/TOKENS.md.
+  Spacing: dùng thang mặc định của Tailwind nhưng CHỈ các bậc 1 2 3 4 6 8 12 16 (xem CLAUDE.md).
+*/
 @theme {
-  --font-serif: Georgia, "Times New Roman", "Noto Serif", serif;
+  /* Font: system font, không tải từ ngoài */
+  --font-serif: Georgia, "Noto Serif", "Times New Roman", serif;
   --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
 
-  --color-cream: #faf7f2;
-  --color-ink: #2b2118;
-  --color-brand: #8a5a1f;
+  /* Nền */
+  --color-cream: #faf6f0;      /* nền trang */
+  --color-paper: #fffdf9;      /* nền thẻ */
+  --color-sand: #f1e8dc;       /* khung chat, khách đang chọn, bong bóng khách */
+  --color-sand-soft: #f8f2ea;  /* khung giá, panel form, nền ô nhập */
+
+  /* Chữ */
+  --color-ink: #2b2118;        /* chữ chính, tiêu đề, nền ngày đang chọn, lớp phủ hero (ink/80) */
+  --color-ink-soft: #463c33;   /* chữ trong bong bóng chat */
+  --color-ink-2: #4a4138;      /* nền nhãn "Chưa trả lời" */
+  --color-muted: #6f675d;      /* MỌI chữ phụ: mô tả, meta, nhãn dl, tab chưa chọn, placeholder */
+
+  /* Thương hiệu */
+  --color-brand: #8a5e25;      /* nút chính, link, giá, chữ nhấn trên nền sáng */
+  --color-on-brand: #ffffff;   /* chữ trên nền brand */
+  --color-brand-soft: #f3e6d3; /* nền nhãn trạng thái, chip ngữ cảnh */
+  --color-gold: #c9a46a;       /* CHỈ trang trí: chấm dòng thời gian, đường gạch chân nav */
+  --color-gold-light: #e0c48f; /* eyebrow trên hero tối */
+
+  /* Viền */
+  --color-line: #e6dccd;       /* viền thẻ, đường kẻ (trang trí) */
+  --color-line-strong: #928472;/* viền ô nhập, nút viền — ≥ 3:1 với nền */
+
+  /* Trạng thái */
+  --color-success: #55704b;
+  --color-success-soft: #e7ede0;
+  --color-danger: #a8432f;
+  --color-danger-soft: #f5e4dd;
+  --color-done: #805c69;
+
+  /* Đổ bóng */
+  --shadow-card: 0 1px 2px rgb(43 33 24 / 0.06), 0 8px 24px rgb(43 33 24 / 0.06);
+}
+
+@layer base {
+  html {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3 {
+    font-family: var(--font-serif);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+  ::placeholder {
+    color: var(--color-muted);
+    opacity: 1;
+  }
 }

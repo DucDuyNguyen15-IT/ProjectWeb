@@ -1,0 +1,5 @@
+W3C Nu HTML Checker — https://validator.w3.org/nu/ (Text input / POST, out=json)
+Trang: /#/ (outerHTML của <html> sau khi React render, thêm <!DOCTYPE html>)
+Thời điểm: 2026-11-09T04:32:53.824Z
+Kết quả: 0 lỗi, 0 cảnh báo/thông tin
+

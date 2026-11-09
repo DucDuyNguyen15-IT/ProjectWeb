@@ -1,13 +1,44 @@
-import { Link } from 'react-router'
+import { useRef, useState } from 'react'
+import { CustomerHeader, PageShell } from '../components/layout.jsx'
+import Hero from '../components/dich-vu/Hero.jsx'
+import ChatBox from '../components/dich-vu/ChatBox.jsx'
+import { Gallery, PackageList, Process, Reviews } from '../components/dich-vu/ServiceSections.jsx'
+import { DEFAULT_TOPIC } from '../data/dichVu.js'
+import { scrollToId } from '../utils/scroll.js'
 
-// Màn 1: khách xem dịch vụ và chat hỏi lịch 24/10 09:00. Khung tạm, sẽ dựng theo mockup.
+// Màn 1: khách xem dịch vụ và chat hỏi lịch 24/10 09:00. Luồng chính → Màn 2 qua nút "Gửi".
 export default function DichVu() {
+  const [topic, setTopic] = useState(DEFAULT_TOPIC)
+  const inputRef = useRef(null)
+
+  function openChat() {
+    scrollToId('tu-van')
+    inputRef.current?.focus({ preventScroll: true })
+  }
+
+  function consult(packageTopic) {
+    setTopic(packageTopic)
+    openChat()
+  }
+
   return (
-    <main className="mx-auto max-w-6xl px-4 py-12 md:px-8">
-      <h1 className="font-serif text-4xl">Lưu lại ngày ra trường theo cách của bạn</h1>
-      <Link to="/hoi-thoai" className="mt-6 inline-flex min-h-11 items-center rounded-full bg-brand px-6 font-semibold text-on-brand">
-        Gửi
-      </Link>
-    </main>
+    <PageShell
+      title="Dịch vụ"
+      header={
+        <div className="bg-ink-2">
+          <CustomerHeader dark />
+        </div>
+      }
+    >
+      <Hero
+        chat={<ChatBox topic={topic} inputRef={inputRef} />}
+        onSeePackages={() => scrollToId('goi-chup')}
+        onOpenChat={openChat}
+      />
+      <PackageList onConsult={consult} />
+      <Gallery />
+      <Process />
+      <Reviews />
+    </PageShell>
   )
 }

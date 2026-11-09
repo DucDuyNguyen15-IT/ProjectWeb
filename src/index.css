@@ -42,6 +42,10 @@
 
   /* Đổ bóng */
   --shadow-card: 0 1px 2px rgb(43 33 24 / 0.06), 0 8px 24px rgb(43 33 24 / 0.06);
+
+  /* Bề rộng tối đa của nội dung (gồm cả lề px-8): 1536px. Ở 1280px nội dung rộng 1216px,
+     màn lớn hơn thì dừng ở 1536px để dòng chữ không quá dài. Dùng: max-w-page. */
+  --container-page: 96rem;
 }
 
 @layer base {

@@ -134,3 +134,35 @@ Việc cần làm:
 Cho mình xem bảng tương phản và các màu bị đổi trước khi commit. Commit
 "design: tokens (colors, type, spacing, radius) with contrast checks".
 ```
+
+## Prompt 4 — Nguyễn Thành Dự · Claude Code (Claude Opus 5.5) · 09/11/2026
+
+Đọc rubric, xem repo đã làm gì; vẽ mockup 3 màn trên canvas Claude Design.
+
+```
+PA2 này yêu cầu gì và tôi repo này đã làm được gì rồi
+```
+
+```
+Mình muốn design trước các màn hình này trên claude design trước , vẽ ra các trang artifact đó
+```
+
+## Prompt 5 — Nguyễn Thành Dự · Claude Code (Claude Opus 5.5) · 09/11/2026
+
+Chuyển stack sang React + Vite + Tailwind v4, sửa CLAUDE.md.
+
+```
+Tạo cho mình react + vite + tailwinds trong src trước
+```
+
+```
+PA2 ddwocj chấp nhận react rồi nehs
+```
+
+```
+sửa CLAUDE.md cho phép sài react nhé , sao bạn k cài react + vite = npm create cho lẹ
+```
+
+```
+Làm như bạn gợi ý nhé
+```

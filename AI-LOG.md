@@ -31,3 +31,36 @@ Mỗi mục là một trang hoặc một nhiệm vụ đã giao cho assistant. P
   thanh toán disabled (thứ quan trọng nhất bị mờ, dễ trượt tương phản).
 - Đã kiểm tra: đối chiếu từng màn với docs/pa1/ và LINK.md; mỗi khác biệt có lý do trong
   bảng Changed since PA#1; bảng rủi ro rubric ở cuối LAYOUT.md.
+
+## 4. Mockup 3 màn × 3 độ rộng trên Claude Design — 09/11/2026
+- Người làm: Nguyễn Thành Dự
+- Tool: Claude Code (Claude Opus 5.5), MCP claude-artifacts (loại "Design")
+- Request: Prompt 4 trong brief.md: vẽ 3 màn theo docs/design/LAYOUT.md ở 360/768/1280.
+- Kết quả: canvas "GradStudio PA#2 — 3 màn × 3 độ rộng"
+  (https://claude.ai/artifact/5kE3fGVb7B4NtfYn4AG1GK), 9 artboard, dùng design system
+  GradStudio của Duy; nút Gửi → Màn 2, Tạo booking → Màn 3 bấm thử được.
+- Changed: header Admin ở 768px tách 2 hàng (LAYOUT.md ghi 1 hàng; logo + 5 mục menu +
+  tài khoản cần khoảng 760px, chỉ có 704px); danh sách khách thành 6 người ("Tất cả 6")
+  vì thêm "Tôn Nữ Hoàng Phương Thảo Nguyên"; bảng lịch tài nguyên ở 1280 vẫn cuộn ngang
+  trong khung riêng vì cột phải hẹp.
+- Rejected: không có.
+- Chưa xong / cần kiểm tra: ảnh là khối màu có nhãn (repo chưa có ảnh); giá gói Kỷ yếu
+  và Chân dung CV để [GIÁ GÓI]; chữ phần Quy trình và Đánh giá do assistant viết, cần đối
+  chiếu Figma PA#1. Assistant không tự mở canvas để kiểm tra; chiều cao artboard là ước lượng.
+
+## 5. Chuyển stack sang React + Vite + Tailwind v4 — 09/11/2026
+- Người làm: Nguyễn Thành Dự
+- Tool: Claude Code (Claude Opus 5.5)
+- Request: Prompt 5 trong brief.md: dựng React + Vite + Tailwind trong src/, sửa CLAUDE.md.
+- Kết quả: commit "rules: allow React + Vite in CLAUDE.md" và "build: switch to React +
+  Vite + Tailwind v4". HashRouter với 3 đường dẫn /#/, /#/hoi-thoai, /#/lich-chup (khung
+  tạm); src/input.css đổi tên thành src/index.css, giữ nguyên token; gỡ @tailwindcss/cli
+  và css/tailwind.css; dist/ vào .gitignore.
+- Changed: assistant dừng lại hỏi trước khi cài vì CLAUDE.md cũ cấm React; mình xác nhận
+  rubric PA#2 cho phép React và yêu cầu sửa CLAUDE.md. Chọn HashRouter thay vì
+  BrowserRouter vì rubric mở thẳng từng đường dẫn trên static server.
+- Rejected: `npm create vite` (mình hỏi vì sao không dùng). Lý do: repo đã có file nên
+  lệnh sẽ hỏi ghi đè hoặc tạo thư mục con; template thêm ESLint + plugin (dependency ngoài
+  danh sách), App.css, logo mẫu; không có sẵn Tailwind và router, vẫn phải cài tay.
+- Đã kiểm tra: npm run build ra dist/ (CSS có class bg-brand đúng token); npx vite preview
+  trả 200, dist/index.html nạp ./assets/… (đường dẫn tương đối). Chưa mở bằng trình duyệt.

@@ -154,3 +154,17 @@ Trạng thái cố định: **Đã thống nhất lịch · Chờ cọc 30%.**
 | Ẩn nội dung khi tắt JS | Không có menu gập; `<details>` duy nhất ở Màn 3 chứa nội dung phụ và mở được không cần JS |
 | Chữ trắng trên ảnh thiếu tương phản | Lớp phủ đủ đậm; kiểm tra ở bước 3 bằng `ui-ux-pro-max` và DevTools |
 | Khác PA#1 không giải thích | Mọi khác biệt nằm trong các bảng *Changed since PA#1* ở trên |
+
+---
+
+## Cập nhật khi code (09/11/2026)
+
+Bố cục trên được giữ khi chuyển sang React (HashRouter: `/#/`, `/#/hoi-thoai`, `/#/lich-chup`).
+Những điểm khác so với tài liệu này; bản đúng nhất là `PROTOTYPE.md` mục 3–5:
+
+- Màn 2 và Màn 3 có tương tác như PA#1 (React state): Chọn giờ → Mô phỏng phản hồi của Linh →
+  Đã chốt lịch → Tạo booking; hộp Mô phỏng thanh toán (Hủy / Thành công); "Đặt lại demo".
+  Mở thẳng đường dẫn luôn bắt đầu ở bước đầu của màn đó.
+- Màn 3 không còn `<details>`; bộ lọc trạng thái booking đã hoạt động (tab đổi danh sách).
+- Header Admin ở 768px tách 2 hàng (không đủ 704px cho 1 hàng).
+- Khung nội dung rộng tối đa 1536px (`max-w-page`, xem TOKENS.md).

@@ -166,3 +166,59 @@ sửa CLAUDE.md cho phép sài react nhé , sao bạn k cài react + vite = npm 
 ```
 Làm như bạn gợi ý nhé
 ```
+
+## Prompt 6 — Nguyễn Thành Dự · Claude Code (Claude Opus 5.5) · 09/11/2026
+
+Dựng component React cho 3 màn theo mockup canvas; sửa lề desktop; thử tách Booking rồi hoàn tác; viết PROTOTYPE.md.
+
+```
+Dựa trên artifact đã design hãy thiết kế các component lại và sử dụng react để xử lý thay vì html nhé
+```
+
+```
+ở màn hình desktop đang bị margin 2 bên quá xa nên ui bị ép vô giữa quá nhiều
+```
+
+```
+bỏ booking mới ở màn admin đưa màn hình chat ra to nhất , đưa booking mới nav sang booking
+```
+
+```
+ủa z thôi để lại đi rồi làm báo cáo chứ
+```
+
+## Prompt 7 — Nguyễn Thành Dự · Claude Code (Claude Opus 5.5) · 09/11/2026
+
+Đối chiếu với đề; bổ sung tương tác Màn 2 và Màn 3 còn thiếu.
+
+```
+Đã đáp ứng yêu cầu đề bài chưachưa
+```
+
+```
+Có
+```
+
+## Prompt 8 — Nguyễn Thành Dự · Claude Code (Claude Opus 5.5) · 09/11/2026
+
+Chụp 9 ảnh màn hình; chạy W3C checker trên trang đã render.
+
+```
+bạn chụp được không, chụp cho tôi luôn
+```
+
+```
+gửi lên cho mình nhé
+```
+
+## Prompt 9 — Nguyễn Thành Dự · Claude Code (Claude Opus 5.5) · 09/11/2026
+
+Liệt kê việc còn lại; viết AI-LOG, chia commit, SELF_ASSESSMENT_REPORT.md, nén zip.
+
+```
+còn việc nào nữa
+```
+
+```
+self_assessment_report.md có bên thư mục IA3 á. còn lại làm như bạn gợi ý nhé
+```

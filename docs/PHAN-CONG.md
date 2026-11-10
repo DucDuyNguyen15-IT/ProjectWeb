@@ -2,7 +2,7 @@
 
 **Nhóm:** Nguyễn Đức Duy (24120294) · Nguyễn Thành Dự (24120184)
 **Repo:** https://github.com/DucDuyNguyen15-IT/ProjectWeb
-**Hạn nộp:** 22:00 Chủ nhật 8/11/2026. Tên file `24120184-24120294_<tổng điểm>.zip`
+**Hạn nộp:** 22:00 thứ Tư 11/11/2026 (theo rubric PA#2; bản đầu ghi nhầm Chủ nhật 8/11). Tên file `24120184-24120294_<tổng điểm>.zip`
 **Thiết kế PA#1:** bản dùng chung cả lớp GradStudio (gốc `NhatVy177/gradstudio`, fork `DucDuyNguyen15-IT/gradstudio`). Ảnh trong `docs/pa1/`.
 **Luật kỹ thuật:** xem [`CLAUDE.md`](../CLAUDE.md). Prompt đã gửi: xem [`brief.md`](../brief.md).
 

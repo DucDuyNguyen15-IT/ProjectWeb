@@ -105,3 +105,9 @@ Font: `font-serif` = Georgia, "Noto Serif", "Times New Roman", serif · `font-sa
 | Ô nhập | `w-full min-h-11 px-4 rounded-full border border-line-strong bg-sand-soft text-ink` + `<label>` phía trên |
 | Nhãn trạng thái | `inline-flex items-center px-3 py-1 rounded-full text-sm` + cặp màu ở bảng tương phản |
 | Thẻ | `rounded-2xl bg-paper shadow-card p-4 md:p-6` |
+
+## Bề rộng trang (thêm 09/11/2026)
+
+| Token | Giá trị | Dùng cho |
+|---|---|---|
+| `--container-page` (`max-w-page`) | `96rem` = 1536px | Khung nội dung mọi màn (gồm lề `px-4` / `md:px-8`). Ở 1280px nội dung rộng 1216px; màn rộng hơn thì dừng ở 1536px để dòng chữ không quá dài. Thay `max-w-6xl` (1152px) làm giao diện desktop bị ép vào giữa. |

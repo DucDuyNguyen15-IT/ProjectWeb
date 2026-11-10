@@ -134,3 +134,91 @@ Việc cần làm:
 Cho mình xem bảng tương phản và các màu bị đổi trước khi commit. Commit
 "design: tokens (colors, type, spacing, radius) with contrast checks".
 ```
+
+## Prompt 4 — Nguyễn Thành Dự · Claude Code (Claude Opus 5.5) · 09/11/2026
+
+Đọc rubric, xem repo đã làm gì; vẽ mockup 3 màn trên canvas Claude Design.
+
+```
+PA2 này yêu cầu gì và tôi repo này đã làm được gì rồi
+```
+
+```
+Mình muốn design trước các màn hình này trên claude design trước , vẽ ra các trang artifact đó
+```
+
+## Prompt 5 — Nguyễn Thành Dự · Claude Code (Claude Opus 5.5) · 09/11/2026
+
+Chuyển stack sang React + Vite + Tailwind v4, sửa CLAUDE.md.
+
+```
+Tạo cho mình react + vite + tailwinds trong src trước
+```
+
+```
+PA2 ddwocj chấp nhận react rồi nehs
+```
+
+```
+sửa CLAUDE.md cho phép sài react nhé , sao bạn k cài react + vite = npm create cho lẹ
+```
+
+```
+Làm như bạn gợi ý nhé
+```
+
+## Prompt 6 — Nguyễn Thành Dự · Claude Code (Claude Opus 5.5) · 09/11/2026
+
+Dựng component React cho 3 màn theo mockup canvas; sửa lề desktop; thử tách Booking rồi hoàn tác; viết PROTOTYPE.md.
+
+```
+Dựa trên artifact đã design hãy thiết kế các component lại và sử dụng react để xử lý thay vì html nhé
+```
+
+```
+ở màn hình desktop đang bị margin 2 bên quá xa nên ui bị ép vô giữa quá nhiều
+```
+
+```
+bỏ booking mới ở màn admin đưa màn hình chat ra to nhất , đưa booking mới nav sang booking
+```
+
+```
+ủa z thôi để lại đi rồi làm báo cáo chứ
+```
+
+## Prompt 7 — Nguyễn Thành Dự · Claude Code (Claude Opus 5.5) · 09/11/2026
+
+Đối chiếu với đề; bổ sung tương tác Màn 2 và Màn 3 còn thiếu.
+
+```
+Đã đáp ứng yêu cầu đề bài chưachưa
+```
+
+```
+Có
+```
+
+## Prompt 8 — Nguyễn Thành Dự · Claude Code (Claude Opus 5.5) · 09/11/2026
+
+Chụp 9 ảnh màn hình; chạy W3C checker trên trang đã render.
+
+```
+bạn chụp được không, chụp cho tôi luôn
+```
+
+```
+gửi lên cho mình nhé
+```
+
+## Prompt 9 — Nguyễn Thành Dự · Claude Code (Claude Opus 5.5) · 09/11/2026
+
+Liệt kê việc còn lại; viết AI-LOG, chia commit, SELF_ASSESSMENT_REPORT.md, nén zip.
+
+```
+còn việc nào nữa
+```
+
+```
+self_assessment_report.md có bên thư mục IA3 á. còn lại làm như bạn gợi ý nhé
+```

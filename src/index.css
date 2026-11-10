@@ -49,6 +49,11 @@
 }
 
 @layer base {
+  @font-face {
+    font-family: "Georgia";
+    src: local("Palatino Linotype"), local("Times New Roman");
+    unicode-range: U+1ED0-1ED9;
+  }
   html {
     background-color: var(--color-cream);
     color: var(--color-ink);

@@ -1,5 +1,5 @@
 W3C Nu HTML Checker — https://validator.w3.org/nu/ (Text input / POST, out=json)
 Trang: /#/lich-chup (outerHTML của <html> sau khi React render, thêm <!DOCTYPE html>)
-Thời điểm: 2026-11-09T04:32:57.911Z
+Thời điểm: 2026-11-10T15:06:50.000Z
 Kết quả: 0 lỗi, 0 cảnh báo/thông tin
 

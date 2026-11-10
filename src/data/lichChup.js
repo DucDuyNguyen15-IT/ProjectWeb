@@ -4,7 +4,7 @@ export const booking = {
   code: 'GS-1024',
   title: 'Chụp ảnh tốt nghiệp',
   details: [
-    ['Gói', 'Tốt nghiệp Premium'],
+    ['Gói', 'Gói Tốt nghiệp Premium'],
     ['Bao gồm', 'Makeup tự nhiên với thợ Mai · 2 giờ chụp trong nhà và sân vườn · 30 ảnh chỉnh màu'],
     ['Ngày', 'Thứ Bảy, 24/10/2026'],
     ['Bắt đầu', '13:00 (makeup)'],

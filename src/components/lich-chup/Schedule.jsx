@@ -62,11 +62,11 @@ export function StudioMap({ className = '' }) {
   return (
     <section aria-labelledby="dia-diem" className={`${CARD} overflow-hidden ${className}`}>
       <div aria-hidden="true" className="relative h-40 bg-sand">
-        <div className="absolute inset-x-0 top-24 h-4 bg-paper" />
+        <div className="absolute inset-x-0 bottom-12 h-4 bg-paper" />
         <div className="absolute inset-y-0 left-1/2 w-4 bg-paper" />
         <div className="absolute top-4 left-4 h-12 w-1/3 rounded-lg bg-line" />
         <div className="absolute top-6 right-6 size-12 rounded-full bg-success-soft" />
-        <span className="absolute top-10 left-1/2 -translate-x-1/2 rounded-full bg-ink px-3 py-1 font-serif text-sm text-cream">
+        <span className="absolute top-8 left-1/2 -translate-x-1/2 rounded-full bg-ink px-3 py-1 font-serif text-sm text-cream">
           GradStudio
         </span>
         <span className="absolute right-2 bottom-2 rounded-lg bg-paper px-2 py-1 text-sm text-muted">Bản đồ minh họa</span>

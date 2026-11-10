@@ -79,8 +79,9 @@ npm run watch        # để CSS tự build lại khi sửa HTML
 
 ## 6. Trước khi nén zip
 
-- [ ] Zip **nguyên thư mục**, có `.git`, không có `node_modules/`
-- [ ] Đủ file: 3 trang, `css/`, `CLAUDE.md`, `PROTOTYPE.md`, `docs/pa1/`, `screenshots/` (9 ảnh), `checks/` (3 kết quả), `brief.md`, `AI-LOG.md`, `SELF_ASSESSMENT_REPORT.md`
+- [ ] Chạy `npm run build` sau thay đổi cuối cùng để cập nhật `dist/`
+- [ ] Zip **nguyên thư mục làm việc**, có `.git` và `dist/`, không có `node_modules/`
+- [ ] Đủ file cho stack React + Vite + Tailwind v4: `index.html` (vỏ Vite), `vite.config.js`, `package.json`, `package-lock.json`, `src/` (`main.jsx`, `App.jsx`, `index.css`, `pages/`, `components/`, `data/`, `utils/`), `dist/` (đã build, có `dist/index.html` và `dist/assets/`), `CLAUDE.md`, `PROTOTYPE.md`, `docs/pa1/`, `docs/design/`, `screenshots/` (9 ảnh), `checks/` (3 kết quả), `brief.md`, `AI-LOG.md`, `SELF_ASSESSMENT_REPORT.md` (không còn `css/tailwind.css`)
 - [ ] Không còn file rubric PDF trong thư mục
-- [ ] Tổng điểm trong `SELF_ASSESSMENT_REPORT.md` trùng với số trong tên file zip
+- [ ] Tổng điểm trong `SELF_ASSESSMENT_REPORT.md` trùng với số trong tên file zip (`24120184-24120294_93.zip`)
 - [ ] Nộp từ tài khoản `<MSSV>@student.hcmus.edu.vn`

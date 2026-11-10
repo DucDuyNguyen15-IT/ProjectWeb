@@ -162,3 +162,27 @@ Mỗi mục là một trang hoặc một nhiệm vụ đã giao cho assistant. P
   md:, xl:) được viết cùng lúc với từng màn nên nằm trong commit của màn đó.
 - Rejected: không có.
 - Đã kiểm tra: git log khớp file; npm run build sau thay đổi cuối cùng.
+
+## 10. Kiểm tra chéo 3 màn và hoàn thiện tài liệu — 10/11/2026
+- Người làm: Nguyễn Đức Duy
+- Tool: Antigravity (Gemini 4 Argon)
+- Request: Prompt 10 trong brief.md: kiểm tra chéo cả 3 màn theo danh sách NEVER và
+  spacing scale trong CLAUDE.md, kiểm tra semantic/heading/label/min-h-11, đối chiếu
+  tính năng với docs/PROPOSAL.md, sửa lỗi phát hiện được, cập nhật SELF_ASSESSMENT_REPORT.md
+  và docs/PHAN-CONG.md.
+- Kết quả: commit ec62973 (sửa lỗi kiểm tra chéo Màn 3) và 5f3a77f (cập nhật tự chấm và
+  checklist nén zip).
+- Changed: đổi tên gói ở Màn 3 từ "Tốt nghiệp Premium" thành "Gói Tốt nghiệp Premium"
+  (src/data/lichChup.js) để khớp nguyên văn với docs/PROPOSAL.md và docs/design/LAYOUT.md;
+  thêm @font-face local fallback cho dải ký tự U+1ED0-1ED9 của Georgia trên Windows để chữ
+  "tốt" trong tiêu đề serif không bị tách dấu; cập nhật SELF_ASSESSMENT_REPORT.md (bổ sung
+  AI-LOG mục 3 của Duy và kết quả kiểm tra chéo) và danh sách file React/Vite trong
+  docs/PHAN-CONG.md mục 6.
+- Sai và đã sửa: grep kiểm tra thang spacing 1/2/3/4/6/8/12/16 trên src/ phát hiện hai
+  class ngoài thang ở bản đồ minh họa Màn 3 (src/components/lich-chup/Schedule.jsx:65,69
+  dùng top-24 và top-10 do assistant viết ở bước 6) → đổi thành bottom-12 và top-8.
+- Rejected: không có.
+- Đã kiểm tra: grep lại toàn bộ src/ (0 vi phạm NEVER, 100% spacing đúng bậc); npm run build
+  thành công; mở npx vite preview kiểm tra ở 360/768/1280px bằng DevTools device toolbar và
+  Accessibility pane, chụp lại screenshots/lich-chup-*.png và kiểm tra lại W3C Text input
+  (0 lỗi, 0 cảnh báo).

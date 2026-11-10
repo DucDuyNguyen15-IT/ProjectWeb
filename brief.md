@@ -222,3 +222,65 @@ còn việc nào nữa
 ```
 self_assessment_report.md có bên thư mục IA3 á. còn lại làm như bạn gợi ý nhé
 ```
+
+## Prompt 10 — Nguyễn Đức Duy · Antigravity (Gemini 4 Argon) · 10/11/2026
+
+Kiểm tra chéo 3 màn, sửa lỗi, cập nhật tài liệu tự chấm và chuẩn bị nén zip.
+
+```
+Bước 7–8 của Duy: kiểm tra chéo 3 màn, sửa lỗi, cập nhật tài liệu tự chấm và chuẩn bị nén zip.
+Repo là bài PA#2 GradStudio (CSC13008), nhóm Duy (24120294) + Dự (24120184).
+Dự đã đổi stack sang React + Vite + Tailwind v4 và làm xong 3 màn, checks/, screenshots/,
+PROTOTYPE.md, SELF_ASSESSMENT_REPORT.md (87/100). Mình vừa merge về; AI-LOG mục 3 (token,
+của Duy) giờ đã có trong file. Hạn nộp 22:00 thứ Tư 11/11/2026.
+
+ĐỌC TRƯỚC và tuân thủ tuyệt đối (luật ghi cho Claude nhưng áp dụng cho mọi assistant):
+1. CLAUDE.md — stack React, dependency được phép, spacing scale, breakpoint, NEVER, định nghĩa "xong".
+2. docs/PHAN-CONG.md, docs/PROPOSAL.md (danh sách tính năng từng màn), docs/design/LAYOUT.md,
+   docs/design/TOKENS.md.
+3. PROTOTYPE.md, SELF_ASSESSMENT_REPORT.md, AI-LOG.md (để biết đã kiểm tra gì và trừ điểm ở đâu).
+4. Code: src/main.jsx, src/App.jsx, src/pages/, src/components/, src/data/, src/index.css.
+Không sửa CLAUDE.md. Không đổi token trong @theme, không thêm màu hay dependency mới. Không push.
+Commit message không thêm dòng Co-Authored-By hay attribution của AI.
+
+Làm từng việc, DỪNG sau mỗi việc để mình duyệt rồi mới commit:
+
+Việc 1 — Kiểm tra chéo code (mình là người soát Màn 1 và Màn 3, nhưng soát cả 3 màn).
+  a. Rà từng dòng NEVER trong CLAUDE.md bằng grep trên src/: arbitrary value `[`, `!important`
+     và tiền tố `!`, `sm:` `lg:` `2xl:`, `style={{`, `overflow-x-hidden`, width/height px cố định,
+     `href="#"`, `onClick` dùng để chuyển trang, `<div>`/`<span>` có onClick, lorem ipsum,
+     link/ảnh/font tải từ CDN. Spacing ngoài bậc 1/2/3/4/6/8/12/16 (p-, m-, gap-, space-, top-…).
+  b. Mỗi màn: đúng một <h1>, không nhảy cấp heading, có header/nav/main/footer, mọi input có
+     <label htmlFor> khớp id, nút/link đứng riêng có min-h-11, bảng nằm trong overflow-x-auto.
+  c. Đối chiếu từng tính năng của 3 màn trong docs/PROPOSAL.md với code: liệt kê tính năng
+     nào có, tính năng nào thiếu hoặc chỉ làm một nửa.
+  In ra bảng: vấn đề – file:dòng – mức độ – cách sửa. Chưa sửa gì.
+
+Việc 2 — Sửa các lỗi mình chọn trong bảng của việc 1. Mỗi lỗi sửa nhỏ nhất có thể, giữ đúng
+  token và công thức class. Chạy `npm run build` phải thành công. Nếu có thay đổi giao diện,
+  liệt kê màn nào và độ rộng nào cần chụp lại screenshots/ và chạy lại W3C cho checks/
+  (mình sẽ tự chụp và tự kiểm tra bằng DevTools). Khác biệt mới so với PA#1 thì thêm vào
+  bảng Changed since PA#1 trong LAYOUT.md và PROTOTYPE.md.
+  Commit (mình commit): "fix: cross-check screens 1-3 (<tóm tắt lỗi đã sửa>)"
+  Nếu việc 1 không có lỗi đáng sửa thì bỏ qua việc 2 và nói rõ.
+
+Việc 3 — Cập nhật tài liệu cho đúng tình trạng mới:
+  - SELF_ASSESSMENT_REPORT.md: AI-LOG mục 3 nay đã có → sửa dòng tiêu chí 6 và mục
+    "What we did not manage"; thêm việc kiểm tra chéo của Duy (việc 1–2, hash commit) vào
+    phần bằng chứng tiêu chí 1/3/7 cho đúng sự thật. Chỉ đề xuất điểm mới kèm lý do;
+    mình quyết định con số cuối. Tổng điểm phải cộng đúng.
+  - docs/PHAN-CONG.md mục 6 "Trước khi nén zip": sửa danh sách file cho stack React
+    (src/, index.html vỏ Vite, vite.config.js, dist/ đã build, không còn css/tailwind.css).
+  Commit: "docs: update self-assessment and zip checklist after cross-check"
+
+Việc 4 — Soạn NHÁP, chỉ in ra cho mình xem, KHÔNG ghi vào file khi mình chưa đồng ý:
+  - Mục AI-LOG.md số 10 cho việc 1–3, đúng mẫu các mục cũ: Người làm (Nguyễn Đức Duy) ·
+    Tool · Request (Prompt 10 trong brief.md) · Kết quả (hash commit) · Changed ·
+    Sai và đã sửa (check nào phát hiện ra) · Rejected · Đã kiểm tra.
+
+Việc 5 — Hướng dẫn nén zip (chỉ in lệnh, không tự chạy): chạy `npm run build` lần cuối,
+  rồi nén nguyên thư mục làm việc thành `24120184-24120294_<tổng điểm>.zip`, CÓ .git và dist/,
+  KHÔNG có node_modules/. Đưa lệnh PowerShell hoặc 7-Zip cho Windows, và lệnh kiểm tra lại
+  nội dung zip (có dist/index.html, .git, screenshots/ 9 ảnh, checks/ 3 file; không có
+  node_modules, không có file PDF rubric).
+```

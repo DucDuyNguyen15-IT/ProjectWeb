@@ -6,4 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   base: './',
   plugins: [react(), tailwindcss()],
+  // Front end chỉ gọi /api tương đối; mock (PA#3) và Express (PA#4) cùng nghe cổng 3001.
+  server: { proxy: { '/api': 'http://localhost:3001' } },
+  preview: { proxy: { '/api': 'http://localhost:3001' } },
 })

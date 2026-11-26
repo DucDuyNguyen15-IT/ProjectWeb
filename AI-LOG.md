@@ -278,3 +278,25 @@ Mỗi mục là một trang hoặc một nhiệm vụ đã giao cho assistant. P
 - Rejected: không có.
 - Đã kiểm tra: contract-check đọc được 9 ví dụ; bảng endpoint 15/35 có ví dụ (đủ phần
   01–04, 20 dòng còn lại thuộc file 05–10 của Dự).
+
+## 6. Mock server cho contract 01–04 — 26/11/2026
+- Người làm: Nguyễn Đức Duy
+- Tool: Claude Code (Claude Opus 5.5)
+- Request: Prompt 1 trong brief.md (commit 3db6d3f): viết mock/server.mjs chỉ dùng
+  module có sẵn của Node, 4 MOCK_MODE, token token-<id>, log mỗi request, dữ liệu trong
+  mock/data/, handler mỗi resource một file để Dự thêm 05–10 song song, không sửa docs/api/.
+- Kết quả: commit c7a9204.
+- Changed: mock/server.mjs, mock/lib/core.mjs, mock/lib/schedule.mjs (kiểm tra trùng
+  dùng chung cho 03, 04 và 05 sau này), mock/routes/{auth,catalog,conversations,
+  schedule,files}.mjs, mock/data/{users,catalog,conversations,schedule}.json.
+- Sai và đã sửa: lần đo đầu tiên chế độ slow mất 32 s thay vì 2 s → đo lại bằng curl
+  127.0.0.1, localhost và Node fetch đều 2,0 s; nguyên nhân là curl gửi khi mock chưa
+  khởi động xong, không phải lỗi của mock.
+- Khác biệt còn để lại: ví dụ 409 trong 03 chỉ nhắc Mai, mock nhắc cả Tuấn (giờ chụp
+  10–12 cũng trùng Tuấn 09–11); contract-check chỉ ghi "note", không FAIL; giữ nguyên,
+  không sửa contract.
+- Rejected: không có.
+- Đã kiểm tra: contract-check trên mock vừa khởi động 48/48 PASS; curl 4 chế độ (slow
+  2 s; error 500 nhưng login 200; empty trả list rỗng kể cả messages lồng trong object;
+  restart xong token-u-linh vẫn 200); đường dẫn lạ 404, JSON hỏng 400;
+  `git diff -- docs/api` trống; grep import chỉ có node:*.

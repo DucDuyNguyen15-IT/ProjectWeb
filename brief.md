@@ -1,286 +1,48 @@
-# brief.md — các prompt nhóm đã gửi cho assistant (nguyên văn, theo thứ tự)
+# brief.md — các prompt nhóm đã gửi cho assistant cho PA#3 (nguyên văn, theo thứ tự)
 
-## Prompt 1 — Nguyễn Đức Duy · Claude Code (Claude Opus 5.5) · 04/11/2026
+Bản PA#2 của file này vẫn còn trong lịch sử git. Contract `docs/api/README.md` và các file 01–04 được viết trước file này. Quá trình viết contract được ghi trong `AI-LOG.md` (mục 1–5).
 
-Rules file, cài đặt dự án và quy trình cả milestone.
+## Prompt 1 — Nguyễn Đức Duy · Claude Code (Claude Opus 5.5) · 26/11/2026
 
-```
-Bối cảnh: Nhóm mình gồm Nguyễn Đức Duy (24120294) và Nguyễn Thành Dự (24120184), môn CSC13008.
-PA#2 (hạn 22:00 8/11/2026) yêu cầu chuyển 3 màn luồng chính PA#1 của dự án GradStudio thành 3 trang
-HTML tĩnh responsive. GradStudio là thiết kế dùng chung cả lớp do thầy chốt, gốc ở repo
-NhatVy177/gradstudio, bản fork ở DucDuyNguyen15-IT/gradstudio (gồm 3 ảnh màn trong prototype/,
-2 ảnh bổ sung trong reference/, và LINK.md mô tả luồng bấm). Repo của nhóm:
-https://github.com/DucDuyNguyen15-IT/ProjectWeb. Rubric: PA2-rubric-responsive-prototype.pdf
-trong thư mục này. Đọc rubric và LINK.md trước khi làm.
-
-3 trang theo thứ tự luồng chính:
-  index.html      ← Màn 1: khách Linh xem dịch vụ và chat hỏi lịch 24/10 09:00
-  hoi-thoai.html  ← Màn 2: Admin Thảo thấy trùng lịch makeup, đề xuất 14:00, Linh chốt, tạo booking
-  lich-chup.html  ← Màn 3: Linh xem booking GS-1024, chờ cọc 30%
-
-Quy trình (làm từng bước, xong bước nào chờ mình duyệt mới sang bước tiếp theo):
-  1. Rules file và cài đặt dự án (lần này).
-  2. Cùng mình lên ý tưởng bố cục từng màn ở 360/768/1280px, giữ đúng nội dung và phong cách PA#1.
-  3. Tạo Design System (token màu, chữ, spacing, nút), dùng skill ui-ux-pro-max kiểm tra
-     tương phản và chỉnh màu nhưng giữ tông kem/nâu của PA#1.
-  4. Dựng mockup 3 màn × 3 độ rộng, xuất ảnh vào docs/design/.
-  5. Code từng trang theo mockup, mỗi trang một commit; sau đó một commit riêng cho đợt responsive.
-  Mọi khác biệt so với PA#1 phải được ghi lại kèm lý do để đưa vào PROTOTYPE.md.
-
-Việc lần này:
-1. git init thư mục D:\HK1-26-27\Web\PA2, nối remote tới repo trên, nhánh main.
-2. Tạo CLAUDE.md ở gốc repo, ghi luật cho cả nhóm. Cho mình xem trước khi commit:
-   - Stack: HTML5 + Tailwind CSS v4. CSS được build bằng Tailwind CLI từ src/input.css ra
-     css/tailwind.css, và commit cả file đã build để trang mở được ngay mà không cần build.
-     Trang chỉ nạp CSS qua <link rel="stylesheet" href="css/tailwind.css">. Không dùng Tailwind
-     CDN (<script>), không dùng Bootstrap hay framework CSS thứ hai, không dùng framework JS,
-     không thêm dependency ngoài @tailwindcss/cli. Không tải font từ ngoài; dùng system font
-     stack (serif cho tiêu đề, sans-serif cho nội dung). Ảnh lưu trong assets/img/ và commit vào
-     repo. Sau mỗi lần sửa HTML phải build lại và commit css/tailwind.css.
-   - Token khai báo trong @theme của src/input.css: màu --color-*, font, cỡ chữ.
-   - Spacing scale: chỉ dùng các bậc 1, 2, 3, 4, 6, 8, 12, 16 của Tailwind (4/8/12/16/24/32/48/64px).
-     Không dùng arbitrary value như p-[13px], w-[350px].
-   - Mobile first: class không tiền tố là cho 360px; md: (≥768px) và xl: (≥1280px). Không dùng
-     breakpoint khác.
-   - Chữ thân ≥ 16px (text-base). Chữ thân và chữ trên nút phải đạt tương phản ≥ 4.5:1.
-   - Nút và link đứng riêng có min-h-11 (44px). Không tin chiều cao mặc định.
-   - Semantic: mỗi trang có header, nav, main, footer; đúng một h1, không nhảy cấp heading.
-     Hành động dùng <button>; chuyển trang dùng <a href="file.html"> hoặc nút submit của form có
-     action="file.html". Mọi input có <label> hiển thị, gắn bằng for/id. Mọi img có alt.
-     Có <meta name="viewport" content="width=device-width, initial-scale=1">.
-   - Dữ liệu viết thẳng vào HTML theo câu chuyện của Linh trong LINK.md, không dùng lorem ipsum.
-     Mỗi trang có ít nhất một mục dài (tên khách dài, tên gói dài) và mục đó phải xuống dòng.
-   - Mục nằm ngoài 3 màn (Booking, Nhân sự, thanh toán, Xem đường đi…) hiển thị dạng chữ hoặc
-     <button type="button" disabled>, và liệt kê trong PROTOTYPE.md mục "Not wired yet".
-   - NEVER: !important (kể cả tiền tố ! của Tailwind); width/height cố định bằng px cho khối bố
-     cục; overflow-x: hidden trên html/body/wrapper (chỉ wrapper của bảng được overflow-x-auto);
-     onclick hoặc JS để chuyển trang; link tuyệt đối /x.html hoặc link tới thư mục; href="#"
-     trên luồng chính; div làm nút; input chỉ có placeholder; lorem ipsum; sửa tay
-     css/tailwind.css.
-   - Định nghĩa "xong" cho một trang: tắt JavaScript rồi mở file trực tiếp ở 360/768/1280px;
-     document.documentElement.scrollWidth > document.documentElement.clientWidth in ra false;
-     [...document.querySelectorAll('body *')].filter(e => e.getBoundingClientRect().right >
-     document.documentElement.clientWidth) in ra []; clientWidth đúng bằng độ rộng đã đặt;
-     W3C checker (validator.w3.org/nu, File upload) báo 0 lỗi; DevTools Accessibility pane
-     hiện đúng landmark, heading và label; mọi link/form trên luồng chính mở đúng file.
-   - Git: commit đầu tiên chỉ chứa CLAUDE.md; mỗi trang một commit; thêm một commit cho đợt
-     responsive; message nói rõ thay đổi gì. Ai làm thì người đó commit trên máy mình.
-3. Commit 2: chép 3 ảnh trong prototype/ và 2 ảnh trong reference/ từ repo
-   DucDuyNguyen15-IT/gradstudio vào docs/pa1/, giữ nguyên tên file.
-4. Commit 3: cài đặt Tailwind: package.json (devDependency @tailwindcss/cli, script "build" và
-   "watch"), .gitignore có node_modules, src/input.css có @import "tailwindcss" và @theme tạm
-   (token chính thức làm ở bước 3), build ra css/tailwind.css.
-Chưa viết HTML và chưa push trong lần này. Báo lại cho mình danh sách commit sau khi xong.
-```
-
-## Prompt 2 — Nguyễn Đức Duy · Claude Code (Claude Opus 5.5) · 04/11/2026
-
-Lên ý tưởng bố cục 3 màn ở 360/768/1280.
+Mock server: phần lõi và các endpoint của contract 01–04.
 
 ```
-Bước 2: lên ý tưởng bố cục. Đọc CLAUDE.md, docs/pa1/ (5 ảnh) và LINK.md của repo
-DucDuyNguyen15-IT/gradstudio. Chưa viết code, chưa tạo mockup trong bước này.
+Bối cảnh: PA#3 GradStudio (rubric PA#3, mục "The mock"). Contract đã commit trong docs/api/:
+README.md (base /api, Bearer token, dạng lỗi chung, mã trạng thái, quy ước, bảng 35 endpoint),
+01-auth.md, 02-catalog.md, 03-conversations.md, 04-schedule.md. Các file 05–10 do Dự viết sau.
+Luật dự án ở CLAUDE.md, mục "Contract và mock".
 
-Mục tiêu: cùng mình chốt mỗi màn trông thế nào ở 360, 768 và 1280px, giữ đúng nội dung và
-phong cách PA#1 (nền kem, nâu vàng, tiêu đề serif, câu chuyện của Linh ngày 24/10/2026).
+Việc cần làm: viết mock/server.mjs và mock/data/ sao cho mock trả lời ĐÚNG như contract 01–04.
 
-Cách làm:
-- Đi lần lượt Màn 1 → Màn 2 → Màn 3. Mỗi lần hỏi mình MỘT câu, kèm 2–3 phương án có sơ đồ
-  ASCII ngắn và phương án bạn đề xuất. Chờ mình chọn rồi mới hỏi câu tiếp.
-- Với mỗi màn, cần chốt được:
-  · thứ tự các khối ở 360px (một cột), cách chia cột ở 768px và 1280px;
-  · thứ quan trọng nhất của màn (nút hoặc khối nổi bật nhất);
-  · phần nào của PA#1 không làm được khi tắt JavaScript (chat nổi, slideshow, nút "Màn 1/2/3",
-    "Đặt lại demo", các bước bấm mô phỏng ở Màn 2, hộp thanh toán ở Màn 3) và thay bằng gì;
-  · link hoặc form nào đưa sang trang tiếp theo trên luồng chính;
-  · mục dài dùng để thử bố cục (tên khách dài, tên gói dài) đặt ở đâu;
-  · phần nào là "Not wired yet".
-- Báo ngay nếu một phương án có nguy cơ vi phạm rubric (cuộn ngang ở 360px, nút dưới 44px,
-  bảng không co được, khác PA#1 mà không có lý do).
+Yêu cầu bắt buộc:
+1. Chỉ dùng module có sẵn của Node (node:http, node:fs, node:path, node:url…). Không có
+   package.json, không cần npm install. Chạy bằng `node mock/server.mjs`, cổng lấy từ PORT,
+   mặc định 3001.
+2. Dữ liệu khởi đầu nằm trong mock/data/*.json, kể đúng câu chuyện trong contract (Linh,
+   Thảo, Mai bận 08:00–12:00 ngày 24/10/2026, Tuấn, Hà, Phòng A/B, c-linh và 3 hội thoại khác,
+   GS-1023…). Mọi thay đổi chỉ giữ trong bộ nhớ, restart thì về lại như ban đầu.
+3. MOCK_MODE: normal (trả lời sau khoảng 150 ms), slow (sau 2 s), error (500 với dạng lỗi chung
+   cho mọi request trừ POST /api/auth/login), empty (mọi list trong câu trả lời là [], kể cả list
+   lồng trong object; object đơn lẻ vẫn trả bình thường). Làm empty ở một chỗ chung (lúc gửi
+   câu trả lời), không rải trong từng handler.
+4. Token dạng token-<user id>, đọc từ Authorization: Bearer; vẫn dùng được sau khi restart.
+   401/403 theo đúng README.
+5. In một dòng cho mỗi request: METHOD path status.
+6. Cấu trúc để Dự thêm file 05–10 song song mà ít xung đột: phần lõi (server, router, gửi JSON,
+   lỗi, đọc token, mode) trong mock/server.mjs; handler mỗi resource một file trong
+   mock/routes/ (auth, catalog, conversations, schedule); kiểm tra trùng lịch đặt ở chỗ dùng
+   chung để 05-bookings gọi lại được khi đổi giờ booking.
+7. Đường dẫn không có trong contract → 404 NOT_FOUND với dạng lỗi chung. Body JSON hỏng → 400.
+8. Ảnh mẫu /api/files/samples/<id>.svg: trả một SVG minh họa đơn giản (không ảnh người thật).
+   Endpoint này chỉ phục vụ ảnh, không nằm trong contract-check.
 
-Kết quả: sau khi chốt cả 3 màn, viết docs/design/LAYOUT.md, gồm cho mỗi màn: bảng khối theo
-3 độ rộng, thứ quan trọng nhất, link luồng chính, danh sách "Changed since PA#1" kèm lý do,
-danh sách "Not wired yet". Cho mình xem trước khi commit. Commit
-"design: layout decisions for 3 screens at 360/768/1280".
-```
+KHÔNG được sửa docs/api/. Nếu thấy contract mâu thuẫn hoặc thiếu thì dừng lại và báo, không tự
+đổi contract cho khớp với code.
 
-## Prompt 3 — Nguyễn Đức Duy · Claude Code (Claude Opus 5.5) · 04/11/2026
-
-Design System: token màu, chữ, spacing, bo góc và kiểm tra tương phản.
-
-```
-Bước 3: Design System. Đọc CLAUDE.md, docs/design/LAYOUT.md và 5 ảnh trong docs/pa1/.
-Chưa viết HTML trong bước này.
-
-Mục tiêu: một bộ token duy nhất cho cả 3 trang, giữ tông PA#1 (nền kem, nâu vàng cho nút
-chính, chữ nâu đậm, tiêu đề serif), đạt tương phản theo rubric.
-
-Việc cần làm:
-1. Lấy màu từ ảnh PA#1: nền trang, nền thẻ, chữ chính, chữ phụ, nâu vàng của nút chính,
-   viền, màu trạng thái (Chờ cọc, Đã chốt, Trùng lịch, Chưa trả lời), lớp phủ tối trên ảnh
-   hero. Liệt kê mã màu đọc được.
-2. Dùng skill ui-ux-pro-max để kiểm tra từng cặp chữ/nền sẽ dùng thật: chữ thân trên nền
-   trang và nền thẻ, chữ phụ (xám/nâu nhạt), chữ trắng trên nút nâu, chữ trắng trên ảnh hero
-   có lớp phủ, chữ trên nhãn trạng thái. Mọi cặp chữ thân và nút phải ≥ 4.5:1. Cặp nào
-   không đạt thì đề xuất mã màu gần nhất đạt, giữ cùng tông. Lập bảng: cặp màu – tỉ lệ cũ –
-   mã mới – tỉ lệ mới – lý do. Mỗi màu bị đổi so với PA#1 phải ghi vào danh sách Changed.
-3. Chốt thang chữ (text-base 16px trở lên cho chữ thân; cỡ h1/h2/h3 ở 360 và 1280), font
-   stack serif/sans trong CLAUDE.md, bo góc, đổ bóng, kiểu nút (chính, phụ viền, link) với
-   min-h-11.
-4. Tạo artifact Design System qua MCP (loại "Design System") gồm màu, chữ, spacing scale
-   1/2/3/4/6/8/12/16, bo góc, các nút và nhãn trạng thái có xem trước, để cả nhóm xem.
-5. Viết token vào @theme trong src/input.css (thay token tạm), chạy npm run build.
-   Viết docs/design/TOKENS.md: bảng token, bảng tương phản ở bước 2, link artifact.
-Cho mình xem bảng tương phản và các màu bị đổi trước khi commit. Commit
-"design: tokens (colors, type, spacing, radius) with contrast checks".
-```
-
-## Prompt 4 — Nguyễn Thành Dự · Claude Code (Claude Opus 5.5) · 09/11/2026
-
-Đọc rubric, xem repo đã làm gì; vẽ mockup 3 màn trên canvas Claude Design.
-
-```
-PA2 này yêu cầu gì và tôi repo này đã làm được gì rồi
-```
-
-```
-Mình muốn design trước các màn hình này trên claude design trước , vẽ ra các trang artifact đó
-```
-
-## Prompt 5 — Nguyễn Thành Dự · Claude Code (Claude Opus 5.5) · 09/11/2026
-
-Chuyển stack sang React + Vite + Tailwind v4, sửa CLAUDE.md.
-
-```
-Tạo cho mình react + vite + tailwinds trong src trước
-```
-
-```
-PA2 ddwocj chấp nhận react rồi nehs
-```
-
-```
-sửa CLAUDE.md cho phép sài react nhé , sao bạn k cài react + vite = npm create cho lẹ
-```
-
-```
-Làm như bạn gợi ý nhé
-```
-
-## Prompt 6 — Nguyễn Thành Dự · Claude Code (Claude Opus 5.5) · 09/11/2026
-
-Dựng component React cho 3 màn theo mockup canvas; sửa lề desktop; thử tách Booking rồi hoàn tác; viết PROTOTYPE.md.
-
-```
-Dựa trên artifact đã design hãy thiết kế các component lại và sử dụng react để xử lý thay vì html nhé
-```
-
-```
-ở màn hình desktop đang bị margin 2 bên quá xa nên ui bị ép vô giữa quá nhiều
-```
-
-```
-bỏ booking mới ở màn admin đưa màn hình chat ra to nhất , đưa booking mới nav sang booking
-```
-
-```
-ủa z thôi để lại đi rồi làm báo cáo chứ
-```
-
-## Prompt 7 — Nguyễn Thành Dự · Claude Code (Claude Opus 5.5) · 09/11/2026
-
-Đối chiếu với đề; bổ sung tương tác Màn 2 và Màn 3 còn thiếu.
-
-```
-Đã đáp ứng yêu cầu đề bài chưachưa
-```
-
-```
-Có
-```
-
-## Prompt 8 — Nguyễn Thành Dự · Claude Code (Claude Opus 5.5) · 09/11/2026
-
-Chụp 9 ảnh màn hình; chạy W3C checker trên trang đã render.
-
-```
-bạn chụp được không, chụp cho tôi luôn
-```
-
-```
-gửi lên cho mình nhé
-```
-
-## Prompt 9 — Nguyễn Thành Dự · Claude Code (Claude Opus 5.5) · 09/11/2026
-
-Liệt kê việc còn lại; viết AI-LOG, chia commit, SELF_ASSESSMENT_REPORT.md, nén zip.
-
-```
-còn việc nào nữa
-```
-
-```
-self_assessment_report.md có bên thư mục IA3 á. còn lại làm như bạn gợi ý nhé
-```
-
-## Prompt 10 — Nguyễn Đức Duy · Antigravity (Gemini 4 Argon) · 10/11/2026
-
-Kiểm tra chéo 3 màn, sửa lỗi, cập nhật tài liệu tự chấm và chuẩn bị nén zip.
-
-```
-Bước 7–8 của Duy: kiểm tra chéo 3 màn, sửa lỗi, cập nhật tài liệu tự chấm và chuẩn bị nén zip.
-Repo là bài PA#2 GradStudio (CSC13008), nhóm Duy (24120294) + Dự (24120184).
-Dự đã đổi stack sang React + Vite + Tailwind v4 và làm xong 3 màn, checks/, screenshots/,
-PROTOTYPE.md, SELF_ASSESSMENT_REPORT.md (87/100). Mình vừa merge về; AI-LOG mục 3 (token,
-của Duy) giờ đã có trong file. Hạn nộp 22:00 thứ Tư 11/11/2026.
-
-ĐỌC TRƯỚC và tuân thủ tuyệt đối (luật ghi cho Claude nhưng áp dụng cho mọi assistant):
-1. CLAUDE.md — stack React, dependency được phép, spacing scale, breakpoint, NEVER, định nghĩa "xong".
-2. docs/PHAN-CONG.md, docs/PROPOSAL.md (danh sách tính năng từng màn), docs/design/LAYOUT.md,
-   docs/design/TOKENS.md.
-3. PROTOTYPE.md, SELF_ASSESSMENT_REPORT.md, AI-LOG.md (để biết đã kiểm tra gì và trừ điểm ở đâu).
-4. Code: src/main.jsx, src/App.jsx, src/pages/, src/components/, src/data/, src/index.css.
-Không sửa CLAUDE.md. Không đổi token trong @theme, không thêm màu hay dependency mới. Không push.
-Commit message không thêm dòng Co-Authored-By hay attribution của AI.
-
-Làm từng việc, DỪNG sau mỗi việc để mình duyệt rồi mới commit:
-
-Việc 1 — Kiểm tra chéo code (mình là người soát Màn 1 và Màn 3, nhưng soát cả 3 màn).
-  a. Rà từng dòng NEVER trong CLAUDE.md bằng grep trên src/: arbitrary value `[`, `!important`
-     và tiền tố `!`, `sm:` `lg:` `2xl:`, `style={{`, `overflow-x-hidden`, width/height px cố định,
-     `href="#"`, `onClick` dùng để chuyển trang, `<div>`/`<span>` có onClick, lorem ipsum,
-     link/ảnh/font tải từ CDN. Spacing ngoài bậc 1/2/3/4/6/8/12/16 (p-, m-, gap-, space-, top-…).
-  b. Mỗi màn: đúng một <h1>, không nhảy cấp heading, có header/nav/main/footer, mọi input có
-     <label htmlFor> khớp id, nút/link đứng riêng có min-h-11, bảng nằm trong overflow-x-auto.
-  c. Đối chiếu từng tính năng của 3 màn trong docs/PROPOSAL.md với code: liệt kê tính năng
-     nào có, tính năng nào thiếu hoặc chỉ làm một nửa.
-  In ra bảng: vấn đề – file:dòng – mức độ – cách sửa. Chưa sửa gì.
-
-Việc 2 — Sửa các lỗi mình chọn trong bảng của việc 1. Mỗi lỗi sửa nhỏ nhất có thể, giữ đúng
-  token và công thức class. Chạy `npm run build` phải thành công. Nếu có thay đổi giao diện,
-  liệt kê màn nào và độ rộng nào cần chụp lại screenshots/ và chạy lại W3C cho checks/
-  (mình sẽ tự chụp và tự kiểm tra bằng DevTools). Khác biệt mới so với PA#1 thì thêm vào
-  bảng Changed since PA#1 trong LAYOUT.md và PROTOTYPE.md.
-  Commit (mình commit): "fix: cross-check screens 1-3 (<tóm tắt lỗi đã sửa>)"
-  Nếu việc 1 không có lỗi đáng sửa thì bỏ qua việc 2 và nói rõ.
-
-Việc 3 — Cập nhật tài liệu cho đúng tình trạng mới:
-  - SELF_ASSESSMENT_REPORT.md: AI-LOG mục 3 nay đã có → sửa dòng tiêu chí 6 và mục
-    "What we did not manage"; thêm việc kiểm tra chéo của Duy (việc 1–2, hash commit) vào
-    phần bằng chứng tiêu chí 1/3/7 cho đúng sự thật. Chỉ đề xuất điểm mới kèm lý do;
-    mình quyết định con số cuối. Tổng điểm phải cộng đúng.
-  - docs/PHAN-CONG.md mục 6 "Trước khi nén zip": sửa danh sách file cho stack React
-    (src/, index.html vỏ Vite, vite.config.js, dist/ đã build, không còn css/tailwind.css).
-  Commit: "docs: update self-assessment and zip checklist after cross-check"
-
-Việc 4 — Soạn NHÁP, chỉ in ra cho mình xem, KHÔNG ghi vào file khi mình chưa đồng ý:
-  - Mục AI-LOG.md số 10 cho việc 1–3, đúng mẫu các mục cũ: Người làm (Nguyễn Đức Duy) ·
-    Tool · Request (Prompt 10 trong brief.md) · Kết quả (hash commit) · Changed ·
-    Sai và đã sửa (check nào phát hiện ra) · Rejected · Đã kiểm tra.
-
-Việc 5 — Hướng dẫn nén zip (chỉ in lệnh, không tự chạy): chạy `npm run build` lần cuối,
-  rồi nén nguyên thư mục làm việc thành `24120184-24120294_<tổng điểm>.zip`, CÓ .git và dist/,
-  KHÔNG có node_modules/. Đưa lệnh PowerShell hoặc 7-Zip cho Windows, và lệnh kiểm tra lại
-  nội dung zip (có dist/index.html, .git, screenshots/ 9 ảnh, checks/ 3 file; không có
-  node_modules, không có file PDF rubric).
+Xong khi:
+- `node tools/contract-check.mjs` trên mock vừa khởi động: mọi ví dụ của README, 01, 02, 03, 04
+  PASS (các dòng "no example" của endpoint 05–10 là chuyện của file chưa viết).
+- Chạy thử 4 chế độ bằng curl: slow trả chậm, error trả 500 nhưng login vẫn 200, empty trả list
+  rỗng, restart xong token cũ vẫn dùng được.
+- `git diff -- docs/api` trống.
 ```

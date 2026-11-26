@@ -208,3 +208,19 @@ Mỗi mục là một trang hoặc một nhiệm vụ đã giao cho assistant. P
 - Đã kiểm tra: `git log origin/main..main` (5 commit PA#2 chưa push, đã push);
   `npm run build` trong client/ sau khi chuyển thư mục; `node tools/contract-check.mjs`
   chạy được (exit 2 vì chưa có docs/api/, đúng như mong đợi).
+
+## 2. Contract: docs/api/README.md — 26/11/2026
+- Người làm: Nguyễn Đức Duy
+- Tool: Claude Code (Claude Opus 5.5)
+- Request: Soạn docs/api/README.md trước khi có mock và front-end: base path /api,
+  header Authorization: Bearer, một dạng lỗi chung, bảng mã trạng thái, quy ước dữ liệu
+  (id, ngày giờ, tiền, tên trạng thái tiếng Việt), luồng thanh toán thử để PA#4 chỉ thay
+  cổng, bảng đủ mọi endpoint cho G1–G11 kèm vai trò và file, dữ liệu khởi đầu của mock.
+  Cho xem trước rồi mới commit.
+- Kết quả: commit 07d0024.
+- Changed: thêm docs/api/README.md (35 endpoint, 10 file 01-auth … 10-admin).
+- Quyết định nhóm: mỗi khách một hội thoại; GS-1024 do admin tạo ở G6 nên chưa có khi
+  mock khởi động, thêm GS-1023 có sẵn ảnh preview để mở thẳng G9/G10.
+- Rejected: không có.
+- Đã kiểm tra: đọc lại bảng theo từng bước G1–G11 của rubric, bước nào cũng có endpoint;
+  tên file đánh số đúng thứ tự contract-check gửi ví dụ.

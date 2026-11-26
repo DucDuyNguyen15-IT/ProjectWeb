@@ -1,0 +1,47 @@
+{
+  "services": [
+    {
+      "id": "svc-ky-yeu", "name": "Kỷ yếu lớp",
+      "description": "Chụp kỷ yếu cho cả lớp tại trường hoặc ngoại cảnh, giá tính theo từng người.",
+      "fromPrice": 350000, "priceUnit": "người",
+      "packages": [
+        { "id": "pkg-ky-yeu-lop", "name": "Gói Kỷ yếu lớp", "price": 350000, "durationMinutes": 180, "editedPhotos": 5, "includes": ["Chụp tập thể và cá nhân", "1 nhiếp ảnh gia cho 30 người", "Ảnh gốc qua link tải"] },
+        { "id": "pkg-ky-yeu-tron-ngay", "name": "Gói Kỷ yếu lớp ngoại cảnh trọn ngày kèm quay phim flycam và album in bìa cứng", "price": 650000, "durationMinutes": 480, "editedPhotos": 10, "includes": ["Chụp ngoại cảnh trọn ngày", "Quay phim flycam", "Album in bìa cứng"] }
+      ]
+    },
+    {
+      "id": "svc-tot-nghiep", "name": "Tốt nghiệp",
+      "description": "Chụp ảnh tốt nghiệp cá nhân hoặc cùng gia đình, có thể thêm makeup.",
+      "fromPrice": 1800000, "priceUnit": "gói",
+      "packages": [
+        { "id": "pkg-tn-premium", "name": "Gói Tốt nghiệp Premium", "price": 1800000, "durationMinutes": 120, "editedPhotos": 30, "includes": ["Chụp tại studio và khuôn viên trường", "Áo cử nhân", "30 ảnh chỉnh sửa"] },
+        { "id": "pkg-tn-gia-dinh", "name": "Gói Tốt nghiệp cùng gia đình", "price": 2500000, "durationMinutes": 180, "editedPhotos": 45, "includes": ["Chụp cùng bố mẹ, người thân", "Áo cử nhân và hoa", "45 ảnh chỉnh sửa"] }
+      ]
+    },
+    {
+      "id": "svc-chan-dung", "name": "Chân dung/CV",
+      "description": "Ảnh chân dung cho CV, hồ sơ xin việc hoặc trang cá nhân.",
+      "fromPrice": 690000, "priceUnit": "gói",
+      "packages": [
+        { "id": "pkg-cv-co-ban", "name": "Gói Chân dung CV cơ bản", "price": 690000, "durationMinutes": 45, "editedPhotos": 5, "includes": ["Phông nền studio", "Hướng dẫn tạo dáng", "5 ảnh chỉnh sửa"] },
+        { "id": "pkg-cv-nang-cao", "name": "Gói Chân dung cá nhân nâng cao", "price": 1200000, "durationMinutes": 90, "editedPhotos": 12, "includes": ["2 bộ trang phục", "Studio và ngoại cảnh gần studio", "12 ảnh chỉnh sửa"] }
+      ]
+    }
+  ],
+  "extras": [
+    { "id": "ex-makeup", "name": "Makeup", "price": 300000, "durationMinutes": 60, "description": "Trang điểm trước buổi chụp, làm trước giờ chụp 60 phút." },
+    { "id": "ex-costume", "name": "Thuê trang phục", "price": 150000, "durationMinutes": 0, "description": "Thuê áo dài hoặc vest tại studio cho buổi chụp." }
+  ],
+  "samples": [
+    { "id": "smp-1", "serviceId": "svc-ky-yeu", "title": "Kỷ yếu lớp dưới tán phượng", "imageUrl": "/api/files/samples/smp-1.svg", "alt": "Hình minh họa một lớp học đứng xếp hàng dưới cây phượng đỏ" },
+    { "id": "smp-2", "serviceId": "svc-ky-yeu", "title": "Cả lớp tung áo trên sân trường", "imageUrl": "/api/files/samples/smp-2.svg", "alt": "Hình minh họa cả lớp tung áo đồng phục lên trời trên sân trường" },
+    { "id": "smp-3", "serviceId": "svc-tot-nghiep", "title": "Tung mũ cử nhân", "imageUrl": "/api/files/samples/smp-3.svg", "alt": "Hình minh họa tân cử nhân tung mũ trước giảng đường" },
+    { "id": "smp-4", "serviceId": "svc-tot-nghiep", "title": "Tốt nghiệp cùng gia đình", "imageUrl": "/api/files/samples/smp-4.svg", "alt": "Hình minh họa tân cử nhân chụp cùng bố mẹ, cầm bó hoa" },
+    { "id": "smp-5", "serviceId": "svc-chan-dung", "title": "Chân dung CV phông sáng", "imageUrl": "/api/files/samples/smp-5.svg", "alt": "Hình minh họa ảnh chân dung bán thân trên phông nền sáng" }
+  ],
+  "reviews": [
+    { "id": "rv-1", "authorName": "Minh Anh", "serviceId": "svc-tot-nghiep", "rating": 5, "text": "Ekip dễ thương, makeup nhẹ nhàng, ảnh trả đúng hẹn.", "createdAt": "2026-09-20T18:30:00+07:00" },
+    { "id": "rv-2", "authorName": "Quốc Bảo", "serviceId": "svc-ky-yeu", "rating": 5, "text": "Cả lớp 40 bạn mà studio sắp xếp rất gọn, ai cũng có ảnh cá nhân đẹp.", "createdAt": "2026-08-30T21:05:00+07:00" },
+    { "id": "rv-3", "authorName": "Thu Hà", "serviceId": "svc-chan-dung", "rating": 4, "text": "Ảnh CV sáng, tự nhiên. Chờ chỉnh ảnh hơi lâu một chút.", "createdAt": "2026-07-12T09:40:00+07:00" }
+  ]
+}

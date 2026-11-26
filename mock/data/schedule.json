@@ -1,0 +1,17 @@
+{
+  "staff": [
+    { "id": "u-mai", "name": "Mai", "skill": "makeup" },
+    { "id": "u-tuan", "name": "Tuấn", "skill": "photo" },
+    { "id": "u-ha", "name": "Hà", "skill": "photo" }
+  ],
+  "rooms": [
+    { "id": "room-a", "name": "Phòng A" },
+    { "id": "room-b", "name": "Phòng B" }
+  ],
+  "busy": [
+    { "date": "2026-10-24", "resourceId": "u-mai", "start": "08:00", "end": "12:00", "label": "Makeup cho lớp 12A1", "activity": "makeup cho lớp 12A1" },
+    { "date": "2026-10-24", "resourceId": "u-tuan", "start": "09:00", "end": "11:00", "label": "Gia đình Ngọc", "activity": "chụp cho Gia đình Ngọc" },
+    { "date": "2026-10-24", "resourceId": "u-ha", "start": "14:00", "end": "16:00", "label": "Kỷ yếu lớp 12A1", "activity": "chụp Kỷ yếu lớp 12A1" },
+    { "date": "2026-10-24", "resourceId": "room-a", "start": "14:00", "end": "16:00", "label": "Kỷ yếu lớp 12A1", "activity": "dùng cho Kỷ yếu lớp 12A1" }
+  ]
+}

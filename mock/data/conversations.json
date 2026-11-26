@@ -1,0 +1,46 @@
+[
+  {
+    "id": "c-linh",
+    "customer": { "id": "u-linh", "name": "Linh" },
+    "status": "Đang tư vấn",
+    "topic": "Gói Tốt nghiệp Premium",
+    "messages": [
+      { "id": "m-1", "type": "text", "sender": { "id": "u-linh", "name": "Linh", "role": "customer" }, "text": "Gói tốt nghiệp có makeup còn lịch 24/10 lúc 09:00 không?", "sentAt": "2026-10-20T17:20:00+07:00", "requestDetails": null, "proposalId": null },
+      { "id": "m-2", "type": "text", "sender": { "id": "u-thao", "name": "Thảo", "role": "admin" }, "text": "Để mình kiểm tra lịch cho bạn nhé", "sentAt": "2026-10-20T17:25:00+07:00", "requestDetails": null, "proposalId": null }
+    ],
+    "proposals": []
+  },
+  {
+    "id": "c-khoa",
+    "customer": { "id": "u-khoa", "name": "Trần Minh Khoa" },
+    "status": "Chưa trả lời",
+    "topic": "Gói Kỷ yếu",
+    "messages": [
+      { "id": "m-khoa-1", "type": "text", "sender": { "id": "u-khoa", "name": "Trần Minh Khoa", "role": "customer" }, "text": "Cho mình hỏi giá gói kỷ yếu cho lớp 40 bạn ạ.", "sentAt": "2026-10-21T08:05:00+07:00", "requestDetails": null, "proposalId": null }
+    ],
+    "proposals": []
+  },
+  {
+    "id": "c-giabao",
+    "customer": { "id": "u-giabao", "name": "Hồ Gia Bảo · Lớp 12A3 — đại diện lớp" },
+    "status": "Đã chốt lịch",
+    "topic": "Gói Kỷ yếu",
+    "messages": [
+      { "id": "m-giabao-1", "type": "text", "sender": { "id": "u-giabao", "name": "Hồ Gia Bảo · Lớp 12A3 — đại diện lớp", "role": "customer" }, "text": "Lớp 12A3 muốn chụp kỷ yếu ở trường sáng 02/11 ạ.", "sentAt": "2026-10-18T19:30:00+07:00", "requestDetails": null, "proposalId": null },
+      { "id": "m-giabao-2", "type": "text", "sender": { "id": "u-thao", "name": "Thảo", "role": "admin" }, "text": "Sáng 02/11 studio còn lịch, mình chốt 08:00–11:00 với anh Hà nhé.", "sentAt": "2026-10-19T09:00:00+07:00", "requestDetails": null, "proposalId": null },
+      { "id": "m-giabao-3", "type": "text", "sender": { "id": "u-giabao", "name": "Hồ Gia Bảo · Lớp 12A3 — đại diện lớp", "role": "customer" }, "text": "Cảm ơn studio, hẹn gặp ngày chụp!", "sentAt": "2026-10-19T20:10:00+07:00", "requestDetails": null, "proposalId": null }
+    ],
+    "proposals": []
+  },
+  {
+    "id": "c-anh",
+    "customer": { "id": "u-anh", "name": "Phạm Hoàng Anh" },
+    "status": "Hoàn thành",
+    "topic": "Gói Chân dung",
+    "messages": [
+      { "id": "m-anh-1", "type": "text", "sender": { "id": "u-thao", "name": "Thảo", "role": "admin" }, "text": "Studio đã gửi link ảnh chân dung của bạn rồi nhé.", "sentAt": "2026-10-15T09:00:00+07:00", "requestDetails": null, "proposalId": null },
+      { "id": "m-anh-2", "type": "text", "sender": { "id": "u-anh", "name": "Phạm Hoàng Anh", "role": "customer" }, "text": "Ảnh đẹp lắm, cảm ơn studio!", "sentAt": "2026-10-15T10:30:00+07:00", "requestDetails": null, "proposalId": null }
+    ],
+    "proposals": []
+  }
+]

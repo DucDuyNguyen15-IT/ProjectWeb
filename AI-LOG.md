@@ -224,3 +224,57 @@ Mỗi mục là một trang hoặc một nhiệm vụ đã giao cho assistant. P
 - Rejected: không có.
 - Đã kiểm tra: đọc lại bảng theo từng bước G1–G11 của rubric, bước nào cũng có endpoint;
   tên file đánh số đúng thứ tự contract-check gửi ví dụ.
+
+## 3. Contract 02-catalog — 26/11/2026
+- Người làm: Nguyễn Đức Duy
+- Tool: Claude Code (Claude Opus 5.5), một subagent (chạy song song với mục 4 và 5)
+- Request: Viết docs/api/02-catalog.md theo README.md và mẫu 01-auth.md: 4 endpoint
+  public GET /api/services (dịch vụ kèm gói), /api/extras, /api/samples (lọc theo
+  serviceId), /api/reviews cho G1. Id và giá được chốt trong prompt: svc-ky-yeu
+  (từ 350.000đ/người), svc-tot-nghiep (từ 1.800.000đ), svc-chan-dung (từ 690.000đ),
+  pkg-tn-premium (1.800.000đ, 120 phút, 30 ảnh), ex-makeup, ex-costume; ảnh mẫu là
+  minh họa, không phải ảnh người thật. Chỉ ghi file của mình, không commit.
+- Kết quả: commit 6298baf.
+- Changed: thêm 02-catalog.md (4 endpoint, 6 ví dụ, có ví dụ 400 cho serviceId lạ).
+- Agent tự đổi so với prompt: dùng pkg-tn-gia-dinh (2.500.000đ) thay cho pkg-tn-co-ban,
+  vì dịch vụ Tốt nghiệp "từ 1.800.000đ" bằng giá Premium nên không thể có gói rẻ hơn
+  → nhóm đọc lại và giữ.
+- Rejected: không có.
+- Đã kiểm tra: contract-check đọc được 6 ví dụ, không lỗi đọc file; grep id khớp với
+  03 và 04.
+
+## 4. Contract 03-conversations — 26/11/2026
+- Người làm: Nguyễn Đức Duy
+- Tool: Claude Code (Claude Opus 5.5), một subagent (chạy song song với mục 3 và 5)
+- Request: Viết docs/api/03-conversations.md cho G3–G6: danh sách và chi tiết hội thoại,
+  gửi tin, gửi yêu cầu đặt lịch, admin đề xuất giờ, khách đồng ý/từ chối. Prompt chốt
+  trước dạng message/proposal (mọi phần tử cùng tên field), dữ liệu khởi đầu (c-linh
+  "Đang tư vấn" và 3 hội thoại khác), quyết định nhóm "mỗi khách một hội thoại", và
+  thứ tự ví dụ: đề xuất 09:00 → 409 trùng lịch Mai; p-1 bị từ chối; p-2 (13:00–16:00)
+  được đồng ý → c-linh "Đã chốt lịch", để 05-bookings tạo GS-1024 từ p-2.
+- Kết quả: commit c9bbba1.
+- Changed: thêm 03-conversations.md (6 endpoint, 25 ví dụ, đủ lỗi 400/401/403/404/409).
+- Agent tự đổi so với prompt: cố định "hôm nay" của mock là 21/10/2026 thay vì ngày thật,
+  vì với ngày thật (26/11) ngày chụp 24/10 đã qua và luật "từ hôm nay trở đi" chặn câu
+  chuyện của Linh → nhóm giữ. Agent tự đặt id khách mẫu u-khoa, u-giabao, u-anh.
+- Rejected: không có.
+- Đã kiểm tra: contract-check đọc được 25 ví dụ; đọc ví dụ cuối (GET c-linh, 7 tin nhắn
+  trộn kiểu text/request/proposal) để chắc tên field khớp theo vị trí từng phần tử.
+
+## 5. Contract 04-schedule — 26/11/2026
+- Người làm: Nguyễn Đức Duy
+- Tool: Claude Code (Claude Opus 5.5), một subagent (chạy song song với mục 3 và 4)
+- Request: Viết docs/api/04-schedule.md cho G5 và G10, chỉ admin: GET /api/resources,
+  GET /api/schedule?date=, POST /api/schedule/check. Kiểm tra trùng trả 200 với
+  available, summary bằng chữ, clashes (lý do) và suggestions (giờ trống), không báo
+  bằng màu; có excludeBookingId cho lúc đổi giờ booking. Dữ liệu chốt trong prompt:
+  Mai bận 08:00–12:00 ngày 24/10, 13:00–16:00 với Mai, Tuấn, Phòng B thì trống;
+  đề xuất chưa giữ chỗ, chỉ booking "Đã đặt lịch" mới giữ.
+- Kết quả: commit 89f2f0a.
+- Changed: thêm 04-schedule.md (3 endpoint, 9 ví dụ).
+- Agent tự đổi so với prompt: thêm luật gợi ý phải cách lịch bận trước ít nhất 60 phút,
+  vì không có luật này thì 12:00–15:00 cũng trống và gợi ý đầu sẽ lệch khỏi câu chuyện
+  (13:00) → nhóm giữ; mock được phép trả sẵn 2 gợi ý cho ngày 24/10.
+- Rejected: không có.
+- Đã kiểm tra: contract-check đọc được 9 ví dụ; bảng endpoint 15/35 có ví dụ (đủ phần
+  01–04, 20 dòng còn lại thuộc file 05–10 của Dự).

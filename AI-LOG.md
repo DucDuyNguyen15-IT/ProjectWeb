@@ -186,3 +186,25 @@ Mỗi mục là một trang hoặc một nhiệm vụ đã giao cho assistant. P
   thành công; mở npx vite preview kiểm tra ở 360/768/1280px bằng DevTools device toolbar và
   Accessibility pane, chụp lại screenshots/lich-chup-*.png và kiểm tra lại W3C Text input
   (0 lỗi, 0 cảnh báo).
+
+## PA#3
+
+## 1. Chuẩn bị repo cho PA#3 — 26/11/2026
+- Người làm: Nguyễn Đức Duy
+- Tool: Claude Code (Claude Opus 5.5)
+- Request: Kéo repo PA#2 về thư mục PA3 (gồm cả các commit PA#2 còn ở máy chưa push),
+  đọc rubric PA#3, final project brief và contract-check README, tóm tắt việc phải làm
+  và chia việc cho nhóm 2 người (docs/PHAN-CONG.md). Sau đó làm bước 0: chuyển app
+  React vào client/ trong một commit riêng, thêm proxy /api → localhost:3001 cho
+  server và preview, thêm tools/contract-check.mjs, cập nhật CLAUDE.md cho PA#3
+  (contract trước, luật mock, đăng nhập, 3 trạng thái dữ liệu, form, định nghĩa "xong").
+- Kết quả: commit 67280f2, 1f3cfc8, 7c636f6, 9a06e10.
+- Changed: phân công PA#3 trong docs/PHAN-CONG.md; client/vite.config.js thêm proxy;
+  CLAUDE.md viết lại cho React + contract.
+- Sai và đã sửa: bản clone mới dùng tên git global "DucDuyNguyen15-IT", khác tên thật
+  dùng ở PA#2 → phát hiện khi kiểm tra `git config user.name` trước lần commit đầu
+  → đặt lại user.name/user.email local thành Nguyễn Đức Duy.
+- Rejected: không có.
+- Đã kiểm tra: `git log origin/main..main` (5 commit PA#2 chưa push, đã push);
+  `npm run build` trong client/ sau khi chuyển thư mục; `node tools/contract-check.mjs`
+  chạy được (exit 2 vì chưa có docs/api/, đúng như mong đợi).
